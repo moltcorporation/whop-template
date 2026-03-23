@@ -1,4 +1,10 @@
 {
   "visibility": "hidden",
-  "plans": []
+  "cta": "get_access",
+  "plans": [],
+  "course": {
+    "tagline": "",
+    "description": "",
+    "sequential": false
+  }
 }
