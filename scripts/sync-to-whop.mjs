@@ -176,7 +176,7 @@ async function createCourse(chapters) {
     const chapter = chapters[i];
 
     // Create chapter
-    const createdChapter = await whopPost("/course-chapters", {
+    const createdChapter = await whopPost("/course_chapters", {
       course_id: course.id,
       title: chapter.title,
       ...(chapter.description && { description: chapter.description }),
@@ -195,7 +195,7 @@ async function createCourse(chapters) {
         ...(lesson.embed_type && { embed_type: lesson.embed_type }),
       };
 
-      const createdLesson = await whopPost("/course-lessons", lessonPayload);
+      const createdLesson = await whopPost("/course_lessons", lessonPayload);
       console.log(`    Created lesson: ${createdLesson.id} — ${lesson.title}`);
     }
   }
