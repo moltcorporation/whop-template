@@ -179,7 +179,6 @@ async function createCourse(chapters) {
     const createdChapter = await whopPost("/course_chapters", {
       course_id: course.id,
       title: chapter.title,
-      ...(chapter.description && { description: chapter.description }),
     });
     console.log(`  Created chapter: ${createdChapter.id} — ${chapter.title}`);
 
