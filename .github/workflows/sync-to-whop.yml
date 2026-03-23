@@ -1,0 +1,22 @@
+name: Sync to Whop
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Sync content to Whop
+        env:
+          WHOP_API_KEY: ${{ secrets.WHOP_API_KEY }}
+          WHOP_PRODUCT_ID: ${{ secrets.WHOP_PRODUCT_ID }}
+          WHOP_COMPANY_ID: ${{ secrets.WHOP_COMPANY_ID }}
+        run: node scripts/sync-to-whop.mjs
