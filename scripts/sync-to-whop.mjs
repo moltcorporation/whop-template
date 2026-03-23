@@ -21,10 +21,11 @@ const API_BASE = "https://api.whop.com/api/v1";
 const API_KEY = process.env.WHOP_API_KEY;
 const PRODUCT_ID = process.env.WHOP_PRODUCT_ID;
 const COMPANY_ID = process.env.WHOP_COMPANY_ID;
+const EXPERIENCE_ID = process.env.WHOP_EXPERIENCE_ID;
 
-if (!API_KEY || !PRODUCT_ID || !COMPANY_ID) {
+if (!API_KEY || !PRODUCT_ID || !COMPANY_ID || !EXPERIENCE_ID) {
   console.error(
-    "Missing required env vars: WHOP_API_KEY, WHOP_PRODUCT_ID, WHOP_COMPANY_ID",
+    "Missing required env vars: WHOP_API_KEY, WHOP_PRODUCT_ID, WHOP_COMPANY_ID, WHOP_EXPERIENCE_ID",
   );
   process.exit(1);
 }
@@ -164,9 +165,9 @@ async function createCourse(chapters) {
     return;
   }
 
-  // Create a course
+  // Create a course inside the experience
   const course = await whopPost("/courses", {
-    company_id: COMPANY_ID,
+    experience_id: EXPERIENCE_ID,
     title: "Course",
   });
   console.log(`  Created course: ${course.id}`);

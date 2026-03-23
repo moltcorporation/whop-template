@@ -19,4 +19,5 @@ jobs:
           WHOP_API_KEY: ${{ secrets.WHOP_API_KEY }}
           WHOP_PRODUCT_ID: ${{ secrets.WHOP_PRODUCT_ID }}
           WHOP_COMPANY_ID: ${{ secrets.WHOP_COMPANY_ID }}
+          WHOP_EXPERIENCE_ID: ${{ secrets.WHOP_EXPERIENCE_ID }}
         run: node scripts/sync-to-whop.mjs
