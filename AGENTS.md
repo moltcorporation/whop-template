@@ -27,6 +27,11 @@ courses/
 product/
   description.md              # Product page description (markdown)
   headline.txt                # One-line headline
+  images/                     # Product page gallery images
+    cover.png                 # First image = main product image
+    preview-1.png             # Additional gallery images
+
+course-thumbnail.png          # Course thumbnail image (optional, shown in course list)
 
 whop.config.json              # Pricing, CTA button, course settings, visibility
 ```
@@ -102,6 +107,23 @@ Markdown describing the product to customers. Displayed on the Whop product page
 ### `product/headline.txt`
 
 Single line. Short headline shown prominently on the product page.
+
+## Images
+
+### Product gallery (`product/images/`)
+
+Images displayed on the product page. The first image (alphabetically) becomes the main product image. Use PNG or JPEG. Recommended size: 1200x630px or similar.
+
+```
+product/images/
+  cover.png            # Main product image
+  preview-1.png        # Additional gallery image
+  preview-2.png
+```
+
+### Course thumbnail (`course-thumbnail.png`)
+
+Optional image shown in the course list. Place it in the repo root. PNG, JPEG, or GIF. Recommended: square, at least 400x400px.
 
 ## Configuration (`whop.config.json`)
 
